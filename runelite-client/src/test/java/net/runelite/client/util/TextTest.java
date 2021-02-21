@@ -24,8 +24,9 @@
  */
 package net.runelite.client.util;
 
-import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 public class TextTest
 {
@@ -41,6 +42,7 @@ public class TextTest
 		assertEquals("a < b", Text.removeTags("a < b"));
 		assertEquals("a  b", Text.removeTags("a <lt> b"));
 		assertEquals("Remove no tags", Text.removeTags("Remove no tags"));
+		assertNull(Text.removeTags(null));
 	}
 
 	@Test
@@ -55,5 +57,6 @@ public class TextTest
 		assertEquals("a < b", Text.removeFormattingTags("a < b"));
 		assertEquals("a <lt> b", Text.removeFormattingTags("a <lt> b"));
 		assertEquals("Remove no tags", Text.removeFormattingTags("Remove no tags"));
+		assertNull(Text.removeTags(null));
 	}
 }

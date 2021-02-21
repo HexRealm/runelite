@@ -81,6 +81,10 @@ public class Text
 	 */
 	public static String removeTags(String str)
 	{
+		if (str == null)
+		{
+			return null;
+		}
 		return TAG_REGEXP.matcher(str).replaceAll("");
 	}
 
@@ -92,6 +96,10 @@ public class Text
 	 */
 	public static String removeFormattingTags(String str)
 	{
+		if (str == null)
+		{
+			return null;
+		}
 		StringBuffer stringBuffer = new StringBuffer();
 		Matcher matcher = TAG_REGEXP.matcher(str);
 		while (matcher.find())
